@@ -5,8 +5,8 @@ export const metadata = {
 
 const Timeline = () => {
     return (
-        <div>
-            timeline
+        <div className="max-w-7xl mx-auto">
+            <h1 className="text-5xl text-[#1f2937FF] font-bold text-left">TimeLine</h1>
         </div>
     );
 };

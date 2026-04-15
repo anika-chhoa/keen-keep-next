@@ -16,13 +16,13 @@ const CallBtn = ({ expectedFriend }) => {
     const isCalled = callHistory.find((call) => call.id === expectedFriend.id);
     if (!isAlreadyCalledLog) {
       setLogHistory([...logHistory, expectedFriend]);
+    }
+    if (!isCalled) {
       setCallHistory([...callHistory, expectedFriend]);
       toast.success(`${expectedFriend.name} is calling...`);
-    }else{
-        toast.error(`${expectedFriend.name} is already called`)
     }
   };
-  console.log(logHistory,callHistory)
+
   return (
     <button
       onClick={handleCallBtn}
