@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const getStatusBg = (status) => {
   if (status === "Almost Due") return "bg-[#efad44]";
@@ -8,7 +9,10 @@ const getStatusBg = (status) => {
 
 const FriendCard = ({ friend }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg text-center p-6 flex flex-col justify-center items-center">
+    <Link
+      href={`/friends/${friend.id}`}
+      className="bg-white shadow-md rounded-lg text-center p-6 flex flex-col justify-center items-center"
+    >
       <Image
         src={friend.picture}
         alt={friend.name}
@@ -17,7 +21,7 @@ const FriendCard = ({ friend }) => {
         className="rounded-full mx-auto"
       />
       <p className="text-xl font-semibold mt-3">{friend.name}</p>
-      <p className="text-slate-500 m-2">
+      <p className="text-slate-500 m-2 text-[12px] font-medium">
         <small>{friend.days_since_contact}d ago</small>
       </p>
       <div className="flex gap-2 justify-center items-center mb-2">
@@ -25,7 +29,7 @@ const FriendCard = ({ friend }) => {
           return (
             <div
               key={ind}
-              className="p-2 bg-[#cbfadbFF] rounded-[100px] text-[#244d3fFF] uppercase font-medium"
+              className="p-2 bg-[#cbfadbFF] rounded-[100px] text-[#244d3fFF] uppercase text-[12px] font-medium"
             >
               <small>{tag}</small>
             </div>
@@ -33,11 +37,11 @@ const FriendCard = ({ friend }) => {
         })}
       </div>
       <div
-        className={`p-2 rounded-[100px] text-white font-medium ${getStatusBg(friend.status)} `}
+        className={`p-2 rounded-[100px] text-white text-[12px] font-medium ${getStatusBg(friend.status)} `}
       >
         {friend.status}
       </div>
-    </div>
+    </Link>
   );
 };
 
