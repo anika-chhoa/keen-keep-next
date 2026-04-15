@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { LuArchive } from "react-icons/lu";
 import { RiDeleteBin5Line, RiNotificationSnoozeLine } from "react-icons/ri";
-import callImg from "../../../assets/call.png";
-import textImg from "../../../assets/text.png";
-import videoImg from "../../../assets/video.png"
+import CallBtn from "@/app/components/friendDetails/CallBtn";
+import TextBtn from "@/app/components/friendDetails/TextBtn";
+import VideoCallBtn from "@/app/components/friendDetails/VideoCallBtn";
 
 
 const friendsPromise = async () => {
@@ -20,7 +20,7 @@ const getStatusBg = (status) => {
 const CardDetails = async ({ params }) => {
   const friends = await friendsPromise();
   const { id } = await params;
-  console.log(id, "params id")
+  
   const expectedFriend = friends.find((friend) => friend.id == id);
   const {
     name,
@@ -32,7 +32,7 @@ const CardDetails = async ({ params }) => {
     goal,
     next_due_date,
   } = expectedFriend;
-  console.log(name,bio)
+ 
 
   return (
     <div className="bg-[#f8fafcFF]">
@@ -116,18 +116,9 @@ const CardDetails = async ({ params }) => {
         <div className="bg-white rounded-lg shadow-sm p-6 mt-6">
             <p className="text-[#244d3fFF] text-xl font-medium mb-4">Quick Check-In</p>
             <div className="grid grid-cols-3 gap-8">
-              <div className="bg-[#f8fafcFF] border border-[#e9e9e9FF] rounded-lg flex flex-col justify-center items-center gap-2 py-4">
-                <Image src={callImg} alt="call Image" width={26} height={26}/>
-                <p className="text-lg text-[#1f2937FF]">Call</p>
-              </div>
-              <div className="bg-[#f8fafcFF] border border-[#e9e9e9FF] rounded-lg flex flex-col justify-center items-center gap-2 py-4">
-                <Image src={textImg} alt="call Image" width={26} height={26}/>
-                <p className="text-lg text-[#1f2937FF]">Text</p>
-              </div>
-              <div className="bg-[#f8fafcFF] border border-[#e9e9e9FF] rounded-lg flex flex-col justify-center items-center gap-2 py-4">
-                <Image src={videoImg} alt="call Image" width={26} height={26}/>
-                <p className="text-lg text-[#1f2937FF]">Video</p>
-              </div>
+              <CallBtn expectedFriend={expectedFriend}/>
+              <TextBtn expectedFriend={expectedFriend}/>
+              <VideoCallBtn expectedFriend={expectedFriend}/>
             </div>
           </div>
       </div>
