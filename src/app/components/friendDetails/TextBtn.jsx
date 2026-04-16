@@ -9,19 +9,19 @@ const TextBtn = ({ expectedFriend }) => {
   const { logHistory, setLogHistory, textHistory, setTextHistory } =
     useContext(HistoryContext);
   const handleTextBtn = () => {
-    const isAlreadyTexted = logHistory.find(
-      (text) => text.id === expectedFriend.id,
-    );
-    const isTexted = textHistory.find((text) => text.id === expectedFriend.id);
-
-    if (!isAlreadyTexted) {
-      setLogHistory([...logHistory, expectedFriend]);
-      
-    }
-    if(!isTexted){
-        setTextHistory([...textHistory, expectedFriend]);
-        toast.success(`${expectedFriend.name} is texted`);
-    }
+    const newLog = {
+      id: expectedFriend.id,
+      name: expectedFriend.name,
+      type: "Text",
+      date: new Date().toLocaleDateString("en-BD", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }),
+    };
+    setLogHistory([...logHistory, newLog]);
+    setTextHistory([...textHistory, newLog]);
+    toast.success(`Text with ${expectedFriend.name}`);
   };
 
   return (

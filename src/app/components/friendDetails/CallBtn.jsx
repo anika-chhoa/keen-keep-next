@@ -10,17 +10,19 @@ const CallBtn = ({ expectedFriend }) => {
     useContext(HistoryContext);
 
   const handleCallBtn = () => {
-    const isAlreadyCalledLog = logHistory.find(
-      (call) => call.id === expectedFriend.id,
-    );
-    const isCalled = callHistory.find((call) => call.id === expectedFriend.id);
-    if (!isAlreadyCalledLog) {
-      setLogHistory([...logHistory, expectedFriend]);
-    }
-    if (!isCalled) {
-      setCallHistory([...callHistory, expectedFriend]);
-      toast.success(`${expectedFriend.name} is calling...`);
-    }
+    const newLog = {
+      id: expectedFriend.id,
+      name: expectedFriend.name,
+      type: "Call",
+      date: new Date().toLocaleDateString("en-BD", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }),
+    };
+    setLogHistory([...logHistory, newLog]);
+    setCallHistory([...callHistory, newLog]);
+    toast.success(`Call with ${expectedFriend.name}`);
   };
 
   return (

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { HistoryContext } from "@/app/context/HistoryContext";
 import Image from "next/image";
 import { useContext } from "react";
@@ -9,19 +9,19 @@ const VideoCallBtn = ({ expectedFriend }) => {
     useContext(HistoryContext);
 
   const handleVideoCallBtn = () => {
-    const isAlreadyVideoCallLog = logHistory.find(
-      (video) => video.id === expectedFriend.id,
-    );
-    const isVideoCalled = videoHistory.find(
-      (video) => video.id === expectedFriend.id,
-    );
-    if (!isAlreadyVideoCallLog) {
-      setLogHistory([...logHistory, expectedFriend]);
-    }
-    if (!isVideoCalled) {
-      setVideoHistory([...videoHistory, expectedFriend]);
-      toast.success(`${expectedFriend.name} is video calling...`);
-    }
+    const newLog = {
+      id: expectedFriend.id,
+      name: expectedFriend.name,
+      type: "Video",
+      date: new Date().toLocaleDateString("en-BD", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }),
+    };
+    setLogHistory([...logHistory, newLog]);
+    setVideoHistory([...videoHistory, newLog]);
+    toast.success(`Video with ${expectedFriend.name}`);
   };
   return (
     <button
