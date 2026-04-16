@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashLoader, PuffLoader } from 'react-spinners';
+import { PuffLoader } from 'react-spinners';
 
 
 
