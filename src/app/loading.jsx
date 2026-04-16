@@ -1,19 +1,11 @@
-import React from 'react';
-import { PuffLoader } from 'react-spinners';
-
-
-
-
-
-
+import { PuffLoader } from "react-spinners";
 
 const loading = () => {
-    return (
-        <div className="flex justify-center items-center my-20">
-            <PuffLoader color='green'/>
-            {/* <h1 className="text-6xl text-center h-screen">Loading.....</h1> */}
-          </div>
-    );
+  return (
+    <div className="flex justify-center items-center my-20">
+      <PuffLoader color="green" />
+    </div>
+  );
 };
 
 export default loading;

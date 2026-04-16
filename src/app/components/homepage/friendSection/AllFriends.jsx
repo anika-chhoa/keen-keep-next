@@ -6,7 +6,7 @@ const friendsPromise = async () => {
   return data;
 };
 
-const AllFriends = async () => {
+const AllFriends =async () => {
   const friends = await friendsPromise();
 
   return (
@@ -15,6 +15,7 @@ const AllFriends = async () => {
         Your Friends
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+
         {friends.map((friend) => (
           <FriendCard key={friend.id} friend={friend} />
         ))}
