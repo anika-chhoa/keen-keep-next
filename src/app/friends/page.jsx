@@ -1,10 +1,12 @@
-import React from 'react';
+
 import AllFriends from '../components/homepage/friendSection/AllFriends';
 
 const Friends = () => {
     return (
-        <div>
+        <div className='bg-[#f8fafcFF]'>
+            <div className='max-w-7xl mx-auto'>
             <AllFriends/>
+            </div>
         </div>
     );
 };

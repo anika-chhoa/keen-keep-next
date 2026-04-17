@@ -18,6 +18,7 @@ const TextBtn = ({ expectedFriend }) => {
         month: "long",
         day: "numeric",
       }),
+      time:new Date().toISOString(),
     };
     setLogHistory([...logHistory, newLog]);
     setTextHistory([...textHistory, newLog]);

@@ -18,8 +18,8 @@ const LogHistory = () => {
     log.name.toLowerCase().includes(search.toLowerCase()),
   );
   const filteredLogsByTime = [...filteredLogsBySearch].sort((a, b) => {
-    const timeA = new Date(a.date).getTime();
-    const timeB = new Date(b.date).getTime();
+    const timeA = new Date(a.time).getTime();
+    const timeB = new Date(b.time).getTime();
 
     return sortOrder === "newest" ? timeB - timeA : timeA - timeB;
   });

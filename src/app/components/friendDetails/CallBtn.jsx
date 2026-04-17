@@ -19,6 +19,7 @@ const CallBtn = ({ expectedFriend }) => {
         month: "long",
         day: "numeric",
       }),
+      time:new Date().toISOString(),
     };
     setLogHistory([...logHistory, newLog]);
     setCallHistory([...callHistory, newLog]);
