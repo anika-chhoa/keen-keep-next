@@ -70,7 +70,9 @@ npm run dev
 ## **Deployment**
 
 Deployed on: Vercel 
+
 Live Link: https://keen-keep-next.vercel.app/
+
 GitHub: https://github.com/anika-chhoa/keen-keep-next.git
 
 
