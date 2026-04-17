@@ -44,8 +44,10 @@ KeenKeeper helps users to:
 ## Project Structure
 **Components**  
 Reusable UI elements like Navbar, Footer, and Friend Cards.
+
 **Pages**  
 Home, Friend Details, Timeline, and Analytics (Stats).
+
 **Data**  
 Centralized JSON file for realistic friend profiles and interaction history.
 
