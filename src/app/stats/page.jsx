@@ -26,30 +26,34 @@ const Stats = () => {
               By Interaction Type
             </p>
             <div className="flex justify-center items-center space-y-6">
-              <PieChart
-                style={{
-                  width: "100%",
-                  maxWidth: "350px",
-                  maxHeight: "30vh",
-                  margin: "mx-auto",
-                  aspectRatio: 1,
-                }}
-                responsive
-              >
-                <Pie
-                  data={data}
-                  innerRadius="80%"
-                  outerRadius="100%"
-                  cornerRadius="50%"
-                  fill="#8884d8"
-                  paddingAngle={5}
-                  dataKey="value"
-                  isAnimationActive={true}
-                />
+              {called === 0 && texted === 0 && videoCalled === 0 ? (
+                <p className="text-center text-xl my-8">No Interactions Logged Yet</p>
+              ) : (
+                <PieChart
+                  style={{
+                    width: "100%",
+                    maxWidth: "350px",
+                    maxHeight: "30vh",
+                    margin: "mx-auto",
+                    aspectRatio: 1,
+                  }}
+                  responsive
+                >
+                  <Pie
+                    data={data}
+                    innerRadius="80%"
+                    outerRadius="100%"
+                    cornerRadius="50%"
+                    fill="#8884d8"
+                    paddingAngle={5}
+                    dataKey="value"
+                    isAnimationActive={true}
+                  />
 
-                <Tooltip />
-                <Legend />
-              </PieChart>
+                  <Tooltip />
+                  <Legend />
+                </PieChart>
+              )}
             </div>
           </div>
         </div>

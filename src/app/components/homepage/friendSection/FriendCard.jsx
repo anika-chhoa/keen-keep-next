@@ -11,7 +11,7 @@ const FriendCard = ({ friend }) => {
   return (
     <Link
       href={`/friends/${friend.id}`}
-      className="bg-white shadow-md rounded-lg text-center p-6 flex flex-col justify-center items-center"
+      className="bg-white shadow-md rounded-lg text-center p-6 flex flex-col justify-center items-center transition-all duration-300 hover:scale-103 hover:shadow-xl"
     >
       <Image
         src={friend.picture}
