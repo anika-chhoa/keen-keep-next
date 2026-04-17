@@ -12,14 +12,17 @@ KeenKeeper helps users to:
 **Friend Management**
 - View all friends in a responsive grid layout
 - Detailed profile page with bio, tags, and contact info
+  
 **Quick Check-In System**
 - Log Call, Text, or Video interactions instantly
 - Real-time timeline updates with toast notifications
+
 **Timeline Page**
 - View all interaction history
 - Search by friend name
 - Sort by Newest / Oldest
 - Filter by interaction type (Call, Text, Video)
+
 **Friendship Analytics**
 - Interactive Pie Chart using Recharts
 - Visual breakdown of communication types
