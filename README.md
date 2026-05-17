@@ -1,6 +1,13 @@
 # KeenKeeper — Keep Your Friendships Alive
 A modern and responsive web application designed to help you maintain meaningful connections with your friends by tracking interactions, setting goals, and visualizing your communication patterns.
 
+# 📸 Project Preview
+
+> Homepage of Dragon-news platform
+
+![Dragon News Screenshot](./src/assets/keenkeeper.png)
+
+
 ## Project Overview
 KeenKeeper helps users to:
 - Track interactions with friends (Call, Text, Video)
