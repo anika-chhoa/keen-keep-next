@@ -48,6 +48,21 @@ KeenKeeper helps users to:
 4. Recharts (Data visualization)
 5. React Toastify (Notifications)
 
+##Dependencies Used
+
+-react
+
+-react-dom
+
+-tailwindcss
+
+-daisyui
+
+-react-icons
+
+-react-toastify
+
+
 ## Project Structure
 **Components**  
 Reusable UI elements like Navbar, Footer, and Friend Cards.
